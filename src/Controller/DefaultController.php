@@ -1,5 +1,5 @@
 <?php
-// src/Controller/ProgramController.php
+// src/Controller/DefaultController.php
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
