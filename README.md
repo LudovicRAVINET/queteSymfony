@@ -8,3 +8,5 @@ quête Symfony
 ![Quête 11: Détail Episode video](DetailEpisodeVideo.webm)
 
 ![Quête 12: Formulaire video](FormVideo.webm)
+
+![Quête 13: CRUD video](CrudVideo.webm)
