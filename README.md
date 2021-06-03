@@ -14,3 +14,5 @@ quête Symfony
 ![Quête 14: Validation video](ValidationVideo.webm)
 
 ![Quête 15: ManyToMany video](ManytomanyVideo.webm)
+
+![Quête 16: EntityType video](EntityTypeVideo.webm)
