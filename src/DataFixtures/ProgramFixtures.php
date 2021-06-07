@@ -11,6 +11,10 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 {
     const PROGRAMS = [
         'Les Tuches',
+        'Les Stroumpf',
+        'La Casa de Papel',
+        'Sense 8',
+        'Hunter X Hunter'
     ];
 
     public function load(ObjectManager $manager)
@@ -18,14 +22,15 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         foreach (self::PROGRAMS as $key => $programTitle) { 
             $program = new Program();     
             $program->setTitle($programTitle);    
-            $program->setSummary('Vive les Tuches!');    
-            $program->setCategory($this->getReference('category_0'));
+            $program->setSummary('Voici le résumé de la série ' . $programTitle);    
+            $program->setCategory($this->getReference('category_' . $key));
+            $this->addReference('program_' . $key, $program);
             //ici les acteurs sont insérés via une boucle pour être DRY mais ce n'est pas obligatoire
             for ($i=0; $i < count(ActorFixtures::ACTORS); $i++) {
                 $program->addActor($this->getReference('actor_' . $i));
+            $manager->persist($program);
             }
         }  
-        $manager->persist($program);
         $manager->flush();
     }
 
