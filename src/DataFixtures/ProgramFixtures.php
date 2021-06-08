@@ -6,6 +6,7 @@ use App\Entity\Program;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
+use App\Service\Slugify;
 
 class ProgramFixtures extends Fixture implements DependentFixtureInterface
 {
@@ -17,11 +18,19 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         'Hunter X Hunter'
     ];
 
+    private $slugify;
+
+    public function __construct(Slugify $slugify)
+    {
+        $this->slugify = $slugify;
+    }
+
     public function load(ObjectManager $manager)
     {
         foreach (self::PROGRAMS as $key => $programTitle) { 
             $program = new Program();     
-            $program->setTitle($programTitle);    
+            $program->setTitle($programTitle);
+            $program->setSlug($this->slugify->generate($programTitle));   
             $program->setSummary('Voici le résumé de la série ' . $programTitle);    
             $program->setCategory($this->getReference('category_' . $key));
             $this->addReference('program_' . $key, $program);

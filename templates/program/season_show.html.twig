@@ -14,7 +14,7 @@
         <div>
             <p>Episode n°{{ episode.number }}: {{ episode.title }}</p>
             {# Lien vers la fiche de l'épisode : #}
-            <a href="{{ path("program_episode_show", { "program": program.id, "season": season.id, "episode": episode.id }) }}">Voir la fiche</a>
+            <a href="{{ path("program_episode_show", { "program_slug": program.slug, "season": season.id, "episode_slug": episode.slug }) }}">Voir la fiche</a>
         </div>
     {% else %}
         Aucune série trouvée.
