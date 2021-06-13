@@ -19,4 +19,7 @@ quête Symfony
 
 ![Quête 18: Services video](ServicesVideo.webm)
 
+![Quête 19: Mail video](MailVideo.webm)
+
 ![Quête 20: Gestion Utilisateur video](GestionUtilisateurVideo.webm)
+
