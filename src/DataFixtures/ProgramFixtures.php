@@ -33,6 +33,11 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             $program->setSlug($this->slugify->generate($programTitle));   
             $program->setSummary('Voici le résumé de la série ' . $programTitle);    
             $program->setCategory($this->getReference('category_' . $key));
+            if ($key < 2) {
+                $program->setOwner($this->getReference('contributor'));
+            } else {
+                $program->setOwner($this->getReference('contributor_' . $key));
+            }
             $this->addReference('program_' . $key, $program);
             //ici les acteurs sont insérés via une boucle pour être DRY mais ce n'est pas obligatoire
             for ($i=0; $i < count(ActorFixtures::ACTORS); $i++) {
@@ -49,6 +54,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         return [
           ActorFixtures::class,
           CategoryFixtures::class,
+          UserFixtures::class
         ];
     }
 }

@@ -8,7 +8,7 @@
   <div class="media-body">
     <h1 class="mt-0">Saison {{ season.number }} de {{ program.title }}</h1>
     <h2 class="mt-0">Episode {{ episode.number }} : {{ episode.title }}</h2>
-    <p>{{ episode.synopsis }}</p>>
+    <p>{{ episode.synopsis }}</p>
   </div>
 </div>
 
@@ -28,6 +28,19 @@
   <h5>commentaire de {{ comment.author.email }} :</h5>
   <p>{{ comment.comment }}</p>
   <h6>Note : {{ comment.rate }}</h6>
+  {% if is_granted("ROLE_ADMIN") or app.user == comment.author %}
+    <form method="post"
+      action="{{ path('program_comment_delete', {
+        'program_slug': program.slug,
+        'season': season.id,
+        'episode_slug': episode.slug,
+        'comment': comment.id
+        }) }}"
+      onsubmit="return confirm('Are you sure you want to delete this comment?');">
+      <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ comment.id) }}">
+    <button class="btn">Supprimer le commentaire</button>
+</form>
+  {% endif %}
 {% endfor %}
 
 {% endblock %}
