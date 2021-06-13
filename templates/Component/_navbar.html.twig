@@ -3,6 +3,12 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/">Accueil</a>
+      {% if app.user %}
+          {{ app.user.email }}
+          <a href="{{ path('app_logout') }}"> Se déconnecter</a>
+      {% else %}
+          <a href="{{ path('app_login') }}"> Se connecter</a>
+      {% endif %}
     </div>
   </div>
 </nav>

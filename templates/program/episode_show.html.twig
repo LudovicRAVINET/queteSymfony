@@ -16,4 +16,18 @@
     Retour à la liste des épisodes
 </a>
 
+{% if app.user %}
+  <h3>Ajouter un commentaire:</h3>
+  {{ form_start(form) }}
+    {{ form_rest(form) }}
+    <input type="submit" value="Valider le commentaire" />
+  {{ form_end(form) }}
+{% endif %}
+
+{% for comment in episode.comments %}
+  <h5>commentaire de {{ comment.author.email }} :</h5>
+  <p>{{ comment.comment }}</p>
+  <h6>Note : {{ comment.rate }}</h6>
+{% endfor %}
+
 {% endblock %}
