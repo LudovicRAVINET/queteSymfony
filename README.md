@@ -23,4 +23,6 @@ quête Symfony
 
 ![Quête 20: Gestion Utilisateur video](GestionUtilisateurVideo.webm)
 
-![Quête 2: Sécurisation route video](SecuRouteVideo.webm)
+![Quête 21: Sécurisation route video](SecuRouteVideo.webm)
+
+![Quête 22: Register route video](RegisterVideo.webm)

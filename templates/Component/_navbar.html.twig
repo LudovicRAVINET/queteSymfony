@@ -1,11 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">Wild Séries</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/">Accueil</a>
       {% if app.user %}
           {{ app.user.email }}
-          <a href="{{ path('app_logout') }}"> Se déconnecter</a>
+          <a class="ms-3" href="{{ path('app_logout') }}"> Se déconnecter</a>
+          {% if app.request.attributes.get('_route') != "profile_show" %}
+            <a class="ms-3" href="{{ path('profile_show') }}"> Mon profil</a>
+          {%endif%}
       {% else %}
           <a href="{{ path('app_login') }}"> Se connecter</a>
       {% endif %}
