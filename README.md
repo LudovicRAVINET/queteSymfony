@@ -26,3 +26,5 @@ quête Symfony
 ![Quête 21: Sécurisation route video](SecuRouteVideo.webm)
 
 ![Quête 22: Register route video](RegisterVideo.webm)
+
+![Quête 23: Requête personnalisée video](RequetePersonnaliseeVideo.webm)
