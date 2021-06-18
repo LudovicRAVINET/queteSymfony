@@ -28,3 +28,5 @@ quête Symfony
 ![Quête 22: Register route video](RegisterVideo.webm)
 
 ![Quête 23: Requête personnalisée video](RequetePersonnaliseeVideo.webm)
+
+![Quête 27: Embedding Controller video](EmbeddingControllerVideo.webm)

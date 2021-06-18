@@ -12,6 +12,17 @@
       {% else %}
           <a href="{{ path('app_login') }}"> Se connecter</a>
       {% endif %}
+
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Catégories
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          {{ render(controller('App\\Controller\\DefaultController::navbarTop')) }}
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
 </nav>
