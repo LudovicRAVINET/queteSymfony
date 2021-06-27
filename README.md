@@ -31,4 +31,6 @@ quête Symfony
 
 ![Quête 24: Flash message video](FlashVideo.webm)
 
+![Quête 25.1: Watchlist video](WatchlistVideo.webm)
+
 ![Quête 27: Embedding Controller video](EmbeddingControllerVideo.webm)
