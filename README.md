@@ -29,4 +29,6 @@ quête Symfony
 
 ![Quête 23: Requête personnalisée video](RequetePersonnaliseeVideo.webm)
 
+![Quête 24: Flash message video](FlashVideo.webm)
+
 ![Quête 27: Embedding Controller video](EmbeddingControllerVideo.webm)
