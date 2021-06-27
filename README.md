@@ -33,4 +33,6 @@ quête Symfony
 
 ![Quête 25.1: Watchlist video](WatchlistVideo.webm)
 
+![Quête 25.2: Watchlist Ajax video](WatchlistAjaxVideo.webm)
+
 ![Quête 27: Embedding Controller video](EmbeddingControllerVideo.webm)
