@@ -36,10 +36,10 @@
     #}
 
     <button class="btn btn-lg btn-primary" type="submit">
-        Se connecter
+        {{ 'account.sign_in'|trans }}
     </button>
 </form>
 
- <a class="btn btn-lg btn-primary mt-3" href="{{ path('app_register') }}">S'inscrire</a>
+ <a class="btn btn-lg btn-primary mt-3" href="{{ path('app_register') }}">{{ 'account.register'|trans }}</a>
 
 {% endblock %}

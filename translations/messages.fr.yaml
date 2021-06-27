@@ -1,0 +1,18 @@
+home: Accueil
+account.logout: 'Se déconnecter'
+account.sign_in: 'Se connecter'
+account.register: 'S''inscrire'
+hello_username: Bonjour %username%
+category.all: 'Toutes les catégories de la table category:'
+category.category: ' - Catégorie : '
+category.fiche: 'Voir la fiche'
+category.none: 'Aucune catégorie trouvée.'
+home.back: "Retour à l'accueil"
+program.all: 'Toutes les séries de la catégorie '
+program.fiche: 'Voir la fiche'
+program.none: 'Aucune série trouvée.'
+profile: 'Mon profil'
+categories: 'Catégories'
+language.choose: 'Choisir la langue'
+language.french: 'Français'
+language.english: 'Anglais'

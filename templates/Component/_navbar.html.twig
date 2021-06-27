@@ -2,23 +2,36 @@
   <a class="navbar-brand" href="/">Wild Séries</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/">Accueil</a>
+      <a class="nav-item nav-link active" href="{{ path('app_index') }}">{{ 'home'|trans }}</a>
       {% if app.user %}
-          {{ app.user.email }}
-          <a class="ms-3" href="{{ path('app_logout') }}"> Se déconnecter</a>
+          {% trans with {'%username%': app.user.email} %}
+            hello_username
+          {% endtrans %} !
+          <a class="ms-3" href="{{ path('app_logout') }}">{{ 'account.logout'|trans }}</a>
           {% if app.request.attributes.get('_route') != "profile_show" %}
-            <a class="ms-3" href="{{ path('profile_show') }}"> Mon profil</a>
+            <a class="ms-3" href="{{ path('profile_show') }}">{{ 'profile'|trans }}</a>
           {%endif%}
       {% else %}
-          <a href="{{ path('app_login') }}"> Se connecter</a>
+          <a href="{{ path('app_login') }}">{{ 'account.sign_in'|trans }}</a>
       {% endif %}
 
       <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Catégories
+            {{ 'categories'|trans }}
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           {{ render(controller('App\\Controller\\DefaultController::navbarTop')) }}
+          </ul>
+        </div>
+      </div>
+
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ 'language.choose'|trans }}
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+            <li><a href="{{ path('change_locale', {_locale: 'fr'}) }}">{{ 'language.french'|trans }}</a></li>
+            <li><a href="{{ path('change_locale', {_locale: 'en'}) }}">{{ 'language.english'|trans }}</a></li>
           </ul>
         </div>
       </div>

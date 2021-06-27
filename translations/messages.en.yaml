@@ -1,0 +1,18 @@
+home: Home
+hello_username: 'Hello %username%'
+account.logout: Logout
+account.sign_in: Sign_in
+account.register: Register
+program.all: 'All programs '
+program.fiche: 'Program access'
+program.none: 'No program'
+home.back: 'Back to home'
+category.all: 'All categories'
+category.category: 'This is the category'
+category.fiche: 'Category access'
+category.none: 'No category'
+profile: profile
+categories: categories
+language.choose: choose your language
+language.french: french
+language.english: english

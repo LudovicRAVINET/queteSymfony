@@ -4,20 +4,20 @@
 
 {% block body %}
 
-<h1>Toutes les séries de la catégorie {{ category.name }} : </h1>
+<h1>{{ 'program.all'|trans }}{{ category.name }} : </h1>
     {% for program in programs %}
         <div>
             <h2>{{ loop.index }} / {{ program.title }}</h2>
             <p>{{ program.summary }}</p>
             {# Lien vers la fiche de la série : #}
-            <a href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
+            <a href="{{ path("program_show", { slug: program.slug }) }}">{{ 'program.fiche'|trans }}</a>
         </div>
     {% else %}
-        Aucune série trouvée.
+        {{ 'program.none'|trans }}
     {% endfor %}
 
     <a href="{{ path('app_index') }}">
-        Retour à l'accueil
+        {{ 'home.back'|trans }}
     </a>
 
 {% endblock %}
