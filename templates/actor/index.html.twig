@@ -9,12 +9,11 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/ludovicravinet/quests/Symfony/wild-series/src/Controller/ActorController.php'|file_link(0) }}">src/Controller/ActorController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/ludovicravinet/quests/Symfony/wild-series/templates/actor/index.html.twig'|file_link(0) }}">templates/actor/index.html.twig</a></code></li>
-    </ul>
+    {% for actor in actors %}
+        <div class="col-12">
+            <h4>{{ actor.name }}</h4>
+            <img class="align-self-start mr-3 w-25" src="{{ vich_uploader_asset(actor) }}" alt="{{ actor.name }} picture">
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}
